@@ -1,19 +1,19 @@
 -- Variables
 
-local function dollhouse()
+function dollhouse()
 -- Dollhouse
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/dollhouse%20rp",true))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/dollhouse%20rp",true))()
 end
 
-local function unknown()
+function unknown()
 -- Universal
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/Universal",true))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/Universal",true))()
 end
 
 -- Game Detector
 
 if game.PlaceId == 417267366 then
-dollhouse()
+    dollhouse()
 else
-unknown()
-
+    unknown()
+end
