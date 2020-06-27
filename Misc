@@ -11,3 +11,7 @@ end)
 sliders:CreateButton("Retarded Dex", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IittIe/Dex/master/dex",true))()
 end)
+
+sliders:CreateButton("Rejoin", function()
+game:GetService("TeleportService"):Teleport(game.PlaceId)
+end)
