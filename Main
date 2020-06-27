@@ -2,12 +2,12 @@
 
 local function dollhouse()
 -- Dollhouse
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/dollhouse%20rp?token=APZ2AHTI7JH253SEQNGJXPS663I7G",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/dollhouse%20rp",true))()
 end
 
 local function unknown()
 -- Universal
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/Universal?token=APZ2AHTB2RIB4DNWJCP5SN2663HZK",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/Universal",true))()
 end
 
 -- Game Detector
