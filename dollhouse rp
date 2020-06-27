@@ -19,11 +19,10 @@
 
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
-local testtab = Library:CreateTab("Mute", "Toggle Server Mute")
-local others = Library:CreateTab("Anti-Log", "Anti-logger and shit")
-local dropdowns = Library:CreateTab("Teleports", "Teleport and shit")
-local sliders = Library:CreateTab("Misc", "WalkSpeed and shit")
-local universal = Library:CreateTab("Universal", "Works in every game and shit")
+local testtab = Library:CreateTab("Mute", "Toggle Server Mute/ Forceplay")
+local others = Library:CreateTab("Anti-Log", "Logging/AntiLog")
+local dropdowns = Library:CreateTab("Teleports", "Teleport")
+local sliders = Library:CreateTab("Misc", "Sliders, Config Speed etc.")
 
 dropdowns:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn Horn", "V.I.P", "Jumpboost"}, function(arg) --the (arg) is the option you choose 
     if arg == "Valkyrie" then
@@ -86,22 +85,6 @@ end)
 
 others:CreateButton("Anti-Logger", function()
     loadstring(game:HttpGet(('https://raw.githubusercontent.com/antisteal/antisteal-main/master/Anti-Steal.lua'),true))()  
-end)
-
-universal:CreateButton("Aimbot", function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/pp/master/aimbot", true))() 
-end)
-
-universal:CreateButton("CMD-X", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()    
-end)
-
-universal:CreateButton("Infinite Yield", function()
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() 
-end)
-
-universal:CreateButton("Emojis", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/pp/master/emojis", true))()
 end)
 
 local mouse = game:GetService("Players").LocalPlayer:GetMouse()
