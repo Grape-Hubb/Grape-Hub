@@ -22,12 +22,12 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 })
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
-local testtab = Library:CreateTab("Mute", "Toggle Server Mute/ Forceplay")
-local others = Library:CreateTab("Anti-Log", "Logging/AntiLog")
-local dropdowns = Library:CreateTab("Teleports", "Teleport")
-local sliders = Library:CreateTab("Misc", "Widespread Utilities")
+local Mute = Library:CreateTab("Mute", "Toggle Server Mute/ Forceplay")
+local Antilog = Library:CreateTab("Anti-Log", "Logging/AntiLog")
+local Teleports = Library:CreateTab("Teleports", "Teleport")
+local Misc = Library:CreateTab("Misc", "Widespread Utilities")
 
-dropdowns:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn Horn", "V.I.P", "Jumpboost"}, function(arg) --the (arg) is the option you choose 
+Teleports:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn Horn", "V.I.P", "Jumpboost"}, function(arg) --the (arg) is the option you choose 
     if arg == "Valkyrie" then
         game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5629.48, 52.3955, -17259.4)
     elseif arg == "Bucket" then
@@ -43,7 +43,7 @@ dropdowns:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn 
     end
 end)
 
-testtab:CreateToggle("Mute Radios", function(arg)
+Mute:CreateToggle("Mute Radios", function(arg)
     if arg then
         _G.On = true
         while _G.On == true do
@@ -59,7 +59,7 @@ testtab:CreateToggle("Mute Radios", function(arg)
     end
 end)
 
-testtab:CreateButton("Force Play", function()
+Mute:CreateButton("Force Play", function()
 	local Boombox = workspace[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool")
 	for i,v in pairs(Boombox:GetDescendants()) do
 		if v:IsA("Sound") then
@@ -72,25 +72,23 @@ testtab:CreateButton("Force Play", function()
 	end)
 end)
 
-sliders:CreateSlider("WalkSpeed", 16, 420, function(arg)
+Misc:CreateSlider("WalkSpeed", 16, 420, function(arg)
     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = arg
 end)
-sliders:CreateSlider("HipHeight", 0, 420, function(arg)
+
+Misc:CreateSlider("HipHeight", 0, 420, function(arg)
     game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = arg
 end)
-sliders:CreateSlider("JumpPower", 50, 420, function(arg)
+
+Misc:CreateSlider("JumpPower", 50, 420, function(arg)
     game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = arg
 end)
 
-sliders:CreateButton("Retarded Dex", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/IittIe/Dex/master/dex",true))()
-end)
-
-sliders:CreateButton("Rejoin", function()
+Misc:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId)
 end)
 
-others:CreateButton("Anti-Logger", function()
+Misc:CreateButton("Anti-Logger", function()
     game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Anti-Log",
     Text = "Coming Soon"
