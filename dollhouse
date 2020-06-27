@@ -87,7 +87,10 @@ sliders:CreateButton("Rejoin", function()
 end)
 
 others:CreateButton("Anti-Logger", function()
-    loadstring(game:HttpGet(('https://raw.githubusercontent.com/antisteal/antisteal-main/master/Anti-Steal.lua'),true))()  
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Anti-Log",
+    Text = "Coming Soon"
+})
 end)
 
 local mouse = game:GetService("Players").LocalPlayer:GetMouse()
