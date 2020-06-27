@@ -24,7 +24,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
 local Mute = Library:CreateTab("Mute", "Toggle Server Mute/ Forceplay")
 local Antilog = Library:CreateTab("Anti-Log", "Logging/AntiLog")
-local Teleports = Library:CreateTab("Teleports", "Teleport")
+local Teleports = Library:CreateTab("Teleports", "Teleports")
 local Misc = Library:CreateTab("Misc", "Widespread Utilities")
 
 Teleports:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn Horn", "V.I.P", "Jumpboost"}, function(arg) --the (arg) is the option you choose 
@@ -90,7 +90,7 @@ end)
 
 Antilog:CreateButton("Anti-Logger", function()
     game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Anti-Log",
+    Title = "Anti-Logger",
     Text = "Coming Soon"
 })
 end)
