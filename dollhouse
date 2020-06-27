@@ -82,6 +82,10 @@ sliders:CreateSlider("JumpPower", 50, 420, function(arg)
     game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = arg
 end)
 
+sliders:CreateButton("DexV2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/IittIe/Dex/master/dex",true))()
+end)
+
 sliders:CreateButton("Rejoin", function()
     game:GetService('TeleportService'):Teleport(game.PlaceId)
 end)
