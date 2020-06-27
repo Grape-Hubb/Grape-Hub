@@ -19,7 +19,7 @@
 
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
-local sliders = Library:CreateTab("Misc", "Widespread Utilities")
+local sliders = Library:CreateTab("Misc", "Sliders, Config Speed etc.")
 local univ = Library:CreateTab("Universal", "Gungame stuff")
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/master/Misc",true))()
