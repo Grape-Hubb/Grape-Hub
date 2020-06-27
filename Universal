@@ -53,7 +53,7 @@ end
  
 Players.PlayerAdded:Connect(onPlayerAdded)
 Players.PlayerRemoving:Connect(onPlayerRemoved)
-end)
+end
 
 
 local mouse = game:GetService("Players").LocalPlayer:GetMouse()
@@ -67,4 +67,3 @@ mouse.KeyDown:Connect(function(key)
         enabled = true
     end
 end)
-
