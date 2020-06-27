@@ -1,0 +1,117 @@
+
+
+
+
+
+
+                local keybind = "n" -- MAKE SURE IT IS LOWERCASE
+
+
+
+
+
+
+
+
+                         --// DO NOT EDIT BELOW \\--
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
+local testtab = Library:CreateTab("Mute", "Toggle Server Mute")
+local others = Library:CreateTab("Anti-Log", "Anti-logger and shit")
+local dropdowns = Library:CreateTab("Teleports", "Teleport and shit")
+local sliders = Library:CreateTab("Misc", "WalkSpeed and shit")
+local universal = Library:CreateTab("Universal", "Works in every game and shit")
+
+dropdowns:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn Horn", "V.I.P", "Jumpboost"}, function(arg) --the (arg) is the option you choose 
+    if arg == "Valkyrie" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5629.48, 52.3955, -17259.4)
+    elseif arg == "Bucket" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5629.68262, 52.2956543, -17255.9746)
+    elseif arg == "V.I.P" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5611.00098, 52.1930618, -17241.625)
+    elseif arg == "Jumpboost" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.48242, 49.345459, -17249.125)
+    elseif arg == "Unicorn Horn" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5629.48242, 51.9956055, -17263.125)
+    elseif arg == "Main" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5537.35986, 29.5007324, -17127.3008)
+    end
+end)
+
+testtab:CreateToggle("Mute Radios", function(arg)
+    if arg then
+        _G.On = true
+        while _G.On == true do
+            wait()
+        for _, audio in next, workspace:GetDescendants() do
+            if audio:IsA("Sound") then
+                audio.Playing = false
+            end
+        end
+    end
+        else
+        _G.On = false
+    end
+end)
+
+testtab:CreateButton("Force Play", function()
+	local Boombox = workspace[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool")
+	for i,v in pairs(Boombox:GetDescendants()) do
+		if v:IsA("Sound") then
+			Sound = v
+			break
+		end
+	end
+	soundrerun = game:GetService("RunService").RenderStepped:Connect(function()
+		Sound.Playing = true
+	end)
+end)
+
+sliders:CreateSlider("WalkSpeed", 16, 420, function(arg)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = arg
+end)
+sliders:CreateSlider("HipHeight", 0, 420, function(arg)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = arg
+end)
+sliders:CreateSlider("JumpPower", 50, 420, function(arg)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = arg
+end)
+
+sliders:CreateButton("Rejoin", function()
+    game:GetService('TeleportService'):Teleport(game.PlaceId)
+end)
+
+others:CreateButton("Anti-Logger", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/antisteal/antisteal-main/master/Anti-Steal.lua'),true))()  
+end)
+
+universal:CreateButton("Aimbot", function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/pp/master/aimbot", true))() 
+end)
+
+universal:CreateButton("CMD-X", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()    
+end)
+
+universal:CreateButton("Infinite Yield", function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))() 
+end)
+
+universal:CreateButton("Emojis", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/pp/master/emojis", true))()
+end)
+
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local enabled = true
+mouse.KeyDown:Connect(function(key)
+    if key == keybind and enabled == true then
+        game:GetService("CoreGui").uiui.Enabled = false
+        enabled = false
+    elseif key == keybind and enabled == false then
+        game:GetService("CoreGui").uiui.Enabled = true
+        enabled = true
+    end
+end)
