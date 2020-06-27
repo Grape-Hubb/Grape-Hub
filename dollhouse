@@ -16,7 +16,10 @@
                          --// DO NOT EDIT BELOW \\--
 
 
-
+game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "Grape Hub Loader",
+	Text = "Grape Hub loaded! Current keybind is " ..keybind.. "!"
+})
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
 local testtab = Library:CreateTab("Mute", "Toggle Server Mute/ Forceplay")
