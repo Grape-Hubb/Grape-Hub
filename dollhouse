@@ -88,7 +88,7 @@ Misc:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId)
 end)
 
-Misc:CreateButton("Anti-Logger", function()
+Antilog:CreateButton("Anti-Logger", function()
     game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Anti-Log",
     Text = "Coming Soon"
