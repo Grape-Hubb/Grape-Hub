@@ -1,0 +1,240 @@
+
+
+
+
+
+
+                local keybind = "n" -- MAKE SURE IT IS LOWERCASE
+
+
+
+
+
+
+
+
+                         --// DO NOT EDIT BELOW \\--
+
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
+local testtab = Library:CreateTab("Mute", "Toggle Server Mute/ Forceplay")
+local others = Library:CreateTab("Anti-Log", "Logging/AntiLog")
+local dropdowns = Library:CreateTab("Teleports", "Teleport")
+local sliders = Library:CreateTab("Misc", "Sliders, Config Speed etc.")
+local univ = Library:CreateTab("Universal", "Works in every game and shit.")
+
+dropdowns:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn Horn", "V.I.P", "Jumpboost"}, function(arg) --the (arg) is the option you choose 
+    if arg == "Valkyrie" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5629.48, 52.3955, -17259.4)
+    elseif arg == "Bucket" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5629.68262, 52.2956543, -17255.9746)
+    elseif arg == "V.I.P" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5611.00098, 52.1930618, -17241.625)
+    elseif arg == "Jumpboost" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5631.48242, 49.345459, -17249.125)
+    elseif arg == "Unicorn Horn" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5629.48242, 51.9956055, -17263.125)
+    elseif arg == "Main" then
+        game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5537.35986, 29.5007324, -17127.3008)
+    end
+end)
+
+testtab:CreateToggle("Mute Radios", function(arg)
+    if arg then
+        _G.On = true
+        while _G.On == true do
+            wait()
+        for _, audio in next, workspace:GetDescendants() do
+            if audio:IsA("Sound") then
+                audio.Playing = false
+            end
+        end
+    end
+        else
+        _G.On = false
+    end
+end)
+
+testtab:CreateButton("Force Play", function()
+	local Boombox = workspace[game.Players.LocalPlayer.Name]:FindFirstChildOfClass("Tool")
+	for i,v in pairs(Boombox:GetDescendants()) do
+		if v:IsA("Sound") then
+			Sound = v
+			break
+		end
+	end
+	soundrerun = game:GetService("RunService").RenderStepped:Connect(function()
+		Sound.Playing = true
+	end)
+end)
+
+sliders:CreateSlider("WalkSpeed", 16, 420, function(arg)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = arg
+end)
+sliders:CreateSlider("HipHeight", 0, 420, function(arg)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.HipHeight = arg
+end)
+sliders:CreateSlider("JumpPower", 50, 420, function(arg)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = arg
+end)
+
+sliders:CreateButton("Rejoin", function()
+    game:GetService('TeleportService'):Teleport(game.PlaceId)
+end)
+
+others:CreateButton("Anti-Logger", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/antisteal/antisteal-main/master/Anti-Steal.lua'),true))()  
+end)
+
+univ:CreateToggle("ESP", function(arg)
+if arg then
+_G.On = true
+local nigga_break_this_loop = 1
+while _G.On == true do
+if nigga_break_this_loop >= 2 then
+    break
+end
+local Holder = Instance.new("Folder", game.CoreGui)
+Holder.Name = "ESP"
+
+local UpdateFuncs = {}
+
+local Box = Instance.new("BoxHandleAdornment")
+Box.Name = "nilBox"
+Box.Size = Vector3.new(4, 7, 4)
+Box.Color3 = Color3.new(100 / 255, 100 / 255, 100 / 255)
+Box.Transparency = 0.3
+Box.ZIndex = 0
+Box.AlwaysOnTop = true
+Box.Visible = true
+
+local NameTag = Instance.new("BillboardGui")
+NameTag.Name = "nilNameTag"
+NameTag.Enabled = false
+NameTag.Size = UDim2.new(0, 200, 0, 50)
+NameTag.AlwaysOnTop = true
+NameTag.StudsOffset = Vector3.new(0, 1.8, 0)
+local Tag = Instance.new("TextLabel", NameTag)
+Tag.Name = "Tag"
+Tag.BackgroundTransparency = 1
+Tag.Position = UDim2.new(0, -50, 0, 0)
+Tag.Size = UDim2.new(0, 300, 0, 20)
+Tag.TextSize = 20
+Tag.TextColor3 = Color3.new(100 / 255, 100 / 255, 100 / 255)
+Tag.TextStrokeColor3 = Color3.new(0 / 255, 0 / 255, 0 / 255)
+Tag.TextStrokeTransparency = 0.4
+Tag.Text = "nil"
+Tag.Font = Enum.Font.SourceSansBold
+Tag.TextScaled = false
+
+local LoadCharacter = function(v)
+	repeat wait() until v.Character ~= nil
+	v.Character:WaitForChild("Humanoid")
+	local vHolder = Holder:FindFirstChild(v.Name)
+	vHolder:ClearAllChildren()
+	local b = Box:Clone()
+	b.Name = v.Name .. "Box"
+	b.Adornee = v.Character
+	b.Parent = vHolder
+	local t = NameTag:Clone()
+	t.Name = v.Name .. "NameTag"
+	t.Enabled = true
+	t.Parent = vHolder
+	t.Adornee = v.Character:WaitForChild("Head", 5)
+	if not t.Adornee then
+		return UnloadCharacter(v)
+	end
+	t.Tag.Text = v.Name
+	b.Color3 = Color3.new(v.TeamColor.r, v.TeamColor.g, v.TeamColor.b)
+	t.Tag.TextColor3 = Color3.new(v.TeamColor.r, v.TeamColor.g, v.TeamColor.b)
+	local UpdateNameTag = function()
+		if not pcall(function()
+			--v.Character.Humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+			local maxh = math.floor(v.Character.Humanoid.MaxHealth)
+			local h = math.floor(v.Character.Humanoid.Health)
+			t.Tag.Text = v.Name .. "\n" .. ((maxh ~= 0 and tostring(math.floor((h / maxh) * 100))) or "0") .. "%  " .. tostring(h) .. "/" .. tostring(maxh)
+		end) then
+			UpdateFuncs[v] = nil
+		end
+	end
+	UpdateNameTag()
+	UpdateFuncs[v] = UpdateNameTag
+end
+
+local UnloadCharacter = function(v)
+	local vHolder = Holder:FindFirstChild(v.Name)
+	if vHolder and (vHolder:FindFirstChild(v.Name .. "Box") ~= nil or vHolder:FindFirstChild(v.Name .. "NameTag") ~= nil) then
+		vHolder:ClearAllChildren()
+	end
+end
+
+local LoadPlayer = function(v)
+	local vHolder = Instance.new("Folder", Holder)
+	vHolder.Name = v.Name
+	v.CharacterAdded:Connect(function()
+		pcall(LoadCharacter, v)
+	end)
+	v.CharacterRemoving:Connect(function()
+		pcall(UnloadCharacter, v)
+	end)
+	LoadCharacter(v)
+end
+
+local UnloadPlayer = function(v)
+	UnloadCharacter(v)
+	local vHolder = Holder:FindFirstChild(v.Name)
+	if vHolder then
+		vHolder:Destroy()
+	end
+end
+
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+	spawn(function() pcall(LoadPlayer, v) end)
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(v)
+	pcall(LoadPlayer, v)
+end)
+
+game:GetService("Players").PlayerRemoving:Connect(function(v)
+	pcall(UnloadPlayer, v)
+end)
+
+game.ItemChanged:Connect(function(i, v)
+	if i:IsA("Player") and v == "TeamColor" then
+		if Holder:FindFirstChild(i.Name) then
+			UnloadCharacter(i)
+			wait()
+			LoadCharacter(i)
+		end
+	elseif i:IsA("Humanoid") and i.Parent then
+		local p = game:GetService("Players"):GetPlayerFromCharacter(i.Parent)
+		if p and Holder:FindFirstChild(p.Name) then
+			UpdateFuncs[p]()
+		end
+	end
+end)
+
+game:GetService("Players").LocalPlayer.NameDisplayDistance = 0
+game:GetService("Players").LocalPlayer.HealthDisplayDistance = 0
+nigga_break_this_loop = nigga_break_this_loop + 1
+end
+    else
+        _G.On = false
+        game:GetService("CoreGui").ESP:Destroy()
+end
+end)
+
+local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+local enabled = true
+mouse.KeyDown:Connect(function(key)
+    if key == keybind and enabled == true then
+        game:GetService("CoreGui").uiui.Enabled = false
+        enabled = false
+    elseif key == keybind and enabled == false then
+        game:GetService("CoreGui").uiui.Enabled = true
+        enabled = true
+    end
+end)
