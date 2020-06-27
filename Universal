@@ -40,15 +40,7 @@ univ:CreateButton("Shuff's Aimbot", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/universal-patch/esp%2C%20aimbot%2C%20chams%2C%20flight",true))()
 end)
 
-univ:CreateToggle("n1bu's welcome bot", function(arg)
-if arg then
-_G.On = true
-local break_this_nigga_loop = 1
-while _G.On == true do
-if break_this_nigga_loop >= 2 then
-    break
-end
-wait()
+univ:CreateButton("n1bu's welcome bot", function()
 local Players = game:GetService("Players")
  
 local function onPlayerAdded(player)
@@ -61,7 +53,4 @@ end
  
 Players.PlayerAdded:Connect(onPlayerAdded)
 Players.PlayerRemoving:Connect(onPlayerRemoved)
-break_this_nigga_loop = break_this_nigga_loop + 1
-else
-_G.On = false
-end
+end)
