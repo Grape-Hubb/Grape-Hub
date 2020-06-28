@@ -33,6 +33,22 @@ misc:CreateSlider("JumpPower", 50, 420, function(arg)
     game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = arg
 end)
 
+misc:CreateButton("Respawn Here", function()
+blue = game.Players.LocalPlayer.Character.Humanoid.Health
+
+red = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+game.Players.LocalPlayer.Character.Humanoid.Health = ("blue")
+
+wait(6)
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = red
+end)
+
+misc:Createbutton("Respawn", function()
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
 misc:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId)
 end)
