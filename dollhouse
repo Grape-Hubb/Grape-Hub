@@ -26,6 +26,7 @@ local Mute = Library:CreateTab("Mute", "Toggle Server Mute/ Forceplay")
 local Antilog = Library:CreateTab("Anti-Log", "Logging/AntiLog")
 local Teleports = Library:CreateTab("Teleports", "Teleports")
 local Misc = Library:CreateTab("Misc", "Widespread Utilities")
+local cred = Library:CreateTab("Credits", "wshuff, n1bu")
 
 Teleports:CreateDropDown("Teleport to", {"Main", "Valkyrie", "Bucket", "Unicorn Horn", "V.I.P", "Jumpboost"}, function(arg) --the (arg) is the option you choose 
     if arg == "Valkyrie" then
@@ -93,6 +94,10 @@ Antilog:CreateButton("Anti-Logger", function()
     Title = "Anti-Logger",
     Text = "Coming Soon"
 })
+end)
+
+cred:CreateButton("Copy Discord Link", function()
+setclipboard("https://discord.gg/p4nS6mV")
 end)
 
 local mouse = game:GetService("Players").LocalPlayer:GetMouse()
