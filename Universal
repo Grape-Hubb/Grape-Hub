@@ -21,6 +21,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/nigga420-boop/lib/master/purpletheme"))()
 local misc = Library:CreateTab("Misc", "Sliders, Config Speed etc.")
 local univ = Library:CreateTab("Universal", "Gungame stuff")
+local cred = Library:CreateTab("Credits", "wshuff, n1bu")
 
 misc:CreateSlider("WalkSpeed", 16, 420, function(arg)
     game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = arg
@@ -38,6 +39,10 @@ end)
 
 univ:CreateButton("Shuff's Aimbot", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Grape-Hubb/Grape-Hub/universal-patch/esp%2C%20aimbot%2C%20chams%2C%20flight",true))()
+end)
+
+cred:CreateButton("Copy Discord Link", function()
+setclipboard("https://discord.gg/p4nS6mV")
 end)
 
 
